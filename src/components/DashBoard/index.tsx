@@ -14,16 +14,15 @@ const Dashboard = () => {
        <div className='mt--7 container-fluid'>
        <div className='row'>
        <div className='col-xl-8'>
-        <div>
         <div className="rounded bg-white mb-3">
       <div className="rounded-t px-4 py-3 bg-transparent">
         <div className="d-flex align-items-center">
-          <div className="col-sm-4">
+          {/* <div className="col-sm-4">
             <h2 className="text-dark text-xl font-semibold">
               Performance to Plan
             </h2>
-          </div>
-          <div className="col-sm-5 d-flex align-items-center">
+          </div> */}
+          <div className="d-flex align-items-center">
           <span className="text-dark px-3">From</span>
             <input type="date" className="form-control" />
             <span className="text-dark px-3">to</span>
@@ -36,8 +35,7 @@ const Dashboard = () => {
           <BarCharts/>
           </div>
       </div>
-    </div>
-      </div>          
+    </div>         
        </div>
          <Sidetable/>      
         </div>
