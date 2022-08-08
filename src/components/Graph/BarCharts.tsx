@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 
-export default function Chart1() {
+export default function ChartMaster() {
   const canvasEl:any = useRef(null);
   useEffect(() => {
     const ctx = canvasEl.current?.getContext("2d");
@@ -83,7 +83,7 @@ export default function Chart1() {
             boxWidth: 50,
             labels: {
               boxWidth: 25,
-              boxHeight: 5,
+              boxHeight:5,
             },
           },
           title: {

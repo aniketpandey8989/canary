@@ -29,13 +29,83 @@ function Tablesmines() {
               <table className="align-items-center table-flush table table-striped">
                 <thead className="thead-light">
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">SALESCUSTOMERTYPE</th>
-                    <th scope="col">TOTALPACKAGES</th>
-                    <th scope="col">TOTALPRICE</th>
+                    <th scope="col">Retailer</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">SKU</th>
+                    <th scope="col">Days Of INV</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    {/* <th scope="row">
+                      <div className="align-items-center media">
+                        <div className="media">
+                          <span className="mb-0 text-sm">Columbia Care</span>
+                        </div>
+                      </div>
+                    </th> */}
+                    <th>Columbia Care</th>
+                    <td>1555 Newton St</td>
+                    <td>
+                      <span className="">Hybrid</span>
+                      <br/>
+                      <span> 0.5g Joint</span>
+                    </td>
+                    <td>2 Days</td>
+                  </tr>
+                  <tr>
+                    {/* <th scope="row">
+                      <div className="align-items-center media">
+                        <div className="media">
+                          <span className="mb-0 text-sm">Columbia Care</span>
+                        </div>
+                      </div>
+                    </th> */}
+                    <th>Columbia Care</th>
+                    <td>4645 De Soto</td>
+                    <td>
+                      <span className="">Indica</span>
+                      <br />
+                      <span>1.0g Joint</span>
+                    </td>
+                    <td>3 Days</td>
+                  </tr>
+                  <tr>
+                    {/* <th scope="row">
+                      <div className="align-items-center media">
+                        <div className="media">
+                          <span className="mb-0 text-sm">Kind Love</span>
+                        </div>
+                      </div>
+                    </th> */}
+                    <th>Kind Love</th>
+                    <td>342 Pine St</td>
+                    <td>
+                      <span className="">Sativa Vape</span>
+                      <br />
+                      <span>0.5g Disposable</span>
+                    </td>
+                    <td>0 Days</td>
+                  </tr>
+                  <tr>
+                    {/* <th scope="row">
+                      <div className="align-items-center media">
+                        <div className="media">
+                          <span className="mb-0 text-sm">Best Buds</span>
+                        </div>
+                      </div>
+                    </th> */}
+                    <th>Best Buds</th>
+                    <td>722 Piermont Ave</td>
+                    <td>
+                      <span className="">Hybrid</span>
+                      <br />
+                      <span>0.5g Joint</span>
+                    </td>
+                    <td>1 Days</td>
+                  </tr>
+                </tbody>
+                {/* <tbody>
                   {Data?.slice(0,10).map((item: any, i: number) => (
                     <tr key={i}>
                       <>
@@ -46,7 +116,7 @@ function Tablesmines() {
                       </>
                     </tr>
                   ))}
-                </tbody>
+                </tbody> */}
               </table>
             </div>
             <div className="py-4 card-footer">
@@ -104,29 +174,31 @@ function Tablesmines() {
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">
+                    {/* <th scope="row">
                       <div className="align-items-center media">
                         <div className="media">
                           <span className="mb-0 text-sm">Columbia Care</span>
                         </div>
                       </div>
-                    </th>
+                    </th> */}
+                    <th>Columbia Care</th>
                     <td>1555 Newton St</td>
                     <td>
                       <span className="">Hybrid</span>
-                      <br />
+                      <br/>
                       <span> 0.5g Joint</span>
                     </td>
                     <td>2 Days</td>
                   </tr>
                   <tr>
-                    <th scope="row">
+                    {/* <th scope="row">
                       <div className="align-items-center media">
                         <div className="media">
                           <span className="mb-0 text-sm">Columbia Care</span>
                         </div>
                       </div>
-                    </th>
+                    </th> */}
+                    <th>Columbia Care</th>
                     <td>4645 De Soto</td>
                     <td>
                       <span className="">Indica</span>
@@ -137,13 +209,14 @@ function Tablesmines() {
                   </tr>
 
                   <tr>
-                    <th scope="row">
+                    {/* <th scope="row">
                       <div className="align-items-center media">
                         <div className="media">
                           <span className="mb-0 text-sm">Kind Love</span>
                         </div>
                       </div>
-                    </th>
+                    </th> */}
+                     <th>Kind Love</th>
                     <td>342 Pine St</td>
                     <td>
                       <span className="">Sativa Vape</span>
@@ -153,13 +226,14 @@ function Tablesmines() {
                     <td>0 Days</td>
                   </tr>
                   <tr>
-                    <th scope="row">
+                    {/* <th scope="row">
                       <div className="align-items-center media">
                         <div className="media">
                           <span className="mb-0 text-sm">Best Buds</span>
                         </div>
                       </div>
-                    </th>
+                    </th> */}
+                     <th>Best Buds</th>
                     <td>722 Piermont Ave</td>
                     <td>
                       <span className="">Hybrid</span>
@@ -225,10 +299,80 @@ function Tablesmines() {
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    {/* <th scope="row">
+                      <div className="align-items-center media">
+                        <div className="media">
+                          <span className="mb-0 text-sm">Columbia Care</span>
+                        </div>
+                      </div>
+                    </th> */}
+                    <th>Columbia Care</th>
+                    <td>1555 Newton St</td>
+                    <td>
+                      <span className="">Hybrid</span>
+                      <br/>
+                      <span> 0.5g Joint</span>
+                    </td>
+                    <td>2 Days</td>
+                  </tr>
+                  <tr>
+                    {/* <th scope="row">
+                      <div className="align-items-center media">
+                        <div className="media">
+                          <span className="mb-0 text-sm">Columbia Care</span>
+                        </div>
+                      </div>
+                    </th> */}
+                    <th>Columbia Care</th>
+                    <td>4645 De Soto</td>
+                    <td>
+                      <span className="">Indica</span>
+                      <br />
+                      <span>1.0g Joint</span>
+                    </td>
+                    <td>3 Days</td>
+                  </tr>
+
+                  <tr>
+                    {/* <th scope="row">
+                      <div className="align-items-center media">
+                        <div className="media">
+                          <span className="mb-0 text-sm">Kind Love</span>
+                        </div>
+                      </div>
+                    </th> */}
+                     <th>Kind Love</th>
+                    <td>342 Pine St</td>
+                    <td>
+                      <span className="">Sativa Vape</span>
+                      <br />
+                      <span>0.5g Disposable</span>
+                    </td>
+                    <td>0 Days</td>
+                  </tr>
+                  <tr>
+                    {/* <th scope="row">
+                      <div className="align-items-center media">
+                        <div className="media">
+                          <span className="mb-0 text-sm">Best Buds</span>
+                        </div>
+                      </div>
+                    </th> */}
+                     <th>Best Buds</th>
+                    <td>722 Piermont Ave</td>
+                    <td>
+                      <span className="">Hybrid</span>
+                      <br />
+                      <span>0.5g Joint</span>
+                    </td>
+                    <td>1 Days</td>
+                  </tr>
+                </tbody>
+                {/* <tbody>
                   {Data?.map((item: any, i: number) => (
                     <tr key={i}>
-                      <>
-                        {/* {console.log(item, "jhgdjashdg")}                                              */}
+                      <>                                                        
                         <td>{item.RETAILER}</td>
                         <td>{item.LOCATION}</td>
                         <td>{item.SKU}</td>
@@ -236,8 +380,8 @@ function Tablesmines() {
                       </>{" "}
                     </tr>
                   ))}
-                </tbody>
-                0
+                </tbody> */}
+              
               </table>
             </div>
             <div className="py-4 card-footer">
@@ -297,13 +441,14 @@ function Tablesmines() {
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">
+                    {/* <th scope="row">
                       <div className="align-items-center media">
                         <div className="media">
                           <span className="mb-0 text-sm">Columbia Care</span>
                         </div>
                       </div>
-                    </th>
+                    </th> */}
+                    <th>Columbia Care</th>
                     <td>1555 Newton St</td>
                     <td>
                       <span className="">Hybrid</span>
@@ -315,13 +460,14 @@ function Tablesmines() {
                     <td>20%</td>
                   </tr>
                   <tr>
-                    <th scope="row">
+                    {/* <th scope="row">
                       <div className="align-items-center media">
                         <div className="media">
                           <span className="mb-0 text-sm">Columbia Care</span>
                         </div>
                       </div>
-                    </th>
+                    </th> */}
+                    <th>Columbia Care</th>
                     <td>4645 De Soto</td>
                     <td>
                       <span className="">Indica</span>
@@ -334,13 +480,14 @@ function Tablesmines() {
                   </tr>
 
                   <tr>
-                    <th scope="row">
+                    {/* <th scope="row">
                       <div className="align-items-center media">
                         <div className="media">
                           <span className="mb-0 text-sm">Kind Love</span>
                         </div>
                       </div>
-                    </th>
+                    </th> */}
+                    <th>Kind Love</th>
                     <td>342 Pine St</td>
                     <td>
                       <span className="">Sativa Vape</span>
@@ -352,13 +499,14 @@ function Tablesmines() {
                     <td>20%</td>
                   </tr>
                   <tr>
-                    <th scope="row">
+                    {/* <th scope="row">
                       <div className="align-items-center media">
                         <div className="media">
                           <span className="mb-0 text-sm">Best Buds</span>
                         </div>
                       </div>
-                    </th>
+                    </th> */}
+                    <th>Kind Love</th>
                     <td>722 Piermont Ave</td>
                     <td>
                       <span className="">Hybrid</span>
