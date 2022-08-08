@@ -1,11 +1,15 @@
 import React from 'react'
+import moment from 'moment';
+import { useState,useEffect } from 'react'
+
 import Header from '../Header'
 import Sidebar from '../Sidebar'
 import Sidetable from '../Sidetable'
-import { useState,useEffect } from 'react'
 import BarCharts from '../Graph/BarCharts'
 
 const Dashboard = () => {
+  const [startDate, setStartDate] = useState(moment().subtract(1, 'months').format('YYYY-MM-DD'));
+  const [endDate, setEndDate] = useState(moment().format('YYYY-MM-DD'));
   return (
     <div>
       <Sidebar/>  
@@ -24,9 +28,9 @@ const Dashboard = () => {
           </div> */}
           <div className="d-flex align-items-center">
           <span className="text-dark px-3">From</span>
-            <input type="date" className="form-control" />
+            <input onChange={(e) => setStartDate(e.target.value)} type="date" value={startDate} className="form-control" />
             <span className="text-dark px-3">to</span>
-            <input type="date" className="form-control" />
+            <input onChange={(e) => setEndDate(e.target.value)} type="date" value={endDate} className="form-control" />
           </div>
         </div>
       </div>
