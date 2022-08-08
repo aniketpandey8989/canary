@@ -1,11 +1,10 @@
 import React from 'react'
 import Brand from '../components/BrandMaster/Brand'
-import Brandmaster from '../components/BrandMaster/Brandmaster'
-import Sidebar from '../components/Sidebar'
-const brandmaster = () => {
+
+const Brandmaster = () => {
   return (
-    <><Brand /></>
+    <Brand />
   )
 }
 
-export default brandmaster
+export default Brandmaster

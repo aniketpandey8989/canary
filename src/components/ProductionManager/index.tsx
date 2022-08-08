@@ -3,7 +3,7 @@ import React from "react";
 
 // import Chart from "chart.js";
 
-function productionmanager() {
+function Productionmanager() {
     React.useEffect(() => {
         var config = {
             type: "line",
@@ -371,4 +371,4 @@ function productionmanager() {
     )
 }
 
-export default productionmanager;
+export default Productionmanager;

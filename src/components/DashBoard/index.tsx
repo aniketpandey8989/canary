@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
-import Sidetable from '../Sidetable'
 import { useState,useEffect } from 'react'
 import Graph from '../Graph'
 import BarCharts from '../Graph/BarCharts'

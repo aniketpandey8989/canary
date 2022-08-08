@@ -5,7 +5,7 @@
 import Graph from "../Graph";
 // import Maps from "../Maps";
 
-import Sidetable from "../Sidetable";
+//import Sidetable from "../Sidetable";
 
 export default function MainPage() {
 
@@ -16,7 +16,7 @@ export default function MainPage() {
                     <Graph/>
                  {/* <Maps/> */}
                 </div>
-                <Sidetable />
+                {/* <Sidetable /> */}
             </div>
         </div>
     )

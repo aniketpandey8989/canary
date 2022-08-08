@@ -15,9 +15,12 @@ function Sidebar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <span>
-          <a href="#" className="pt-0 navbar-brand">
+          <Link href="#">
+          <a className="pt-0 navbar-brand">
             Canary
           </a>
+          </Link>
+          
         </span>
         <ul className="align-items-center d-md-none nav">
           <li className="dropdown nav-item">
@@ -42,7 +45,7 @@ function Sidebar() {
               className={`${dropdownOpen ? `` : "invisible opacity-0"
                 }   rounded border bg-white px-3 py-3 shadow-card transition-all dropdown-opemn`}
             >
-              <ul className="drop-down-menu">
+              {/* <ul className="drop-down-menu">
                 <li>
                   <Link href="">Dashboard</Link>
                 </li>
@@ -55,7 +58,7 @@ function Sidebar() {
                 <li>
                   <Link href="">Logout</Link>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </li>
         </ul>
@@ -94,9 +97,9 @@ function Sidebar() {
           </form>
           <ul className="navbar-nav">
             <>
-              <li className="nav-item active ">
+              <li className="nav-item active">
+                <Link href="/dashboard">
                 <a
-                  href="/dashboard"
                   onClick={(e) => {
                     e.preventDefault();
                     setCollapseOpen(!collapseOpen);
@@ -107,6 +110,8 @@ function Sidebar() {
                 >
                   <i className="fas fa-tag"></i>Sales Manager
                 </a>
+                </Link>
+                
               </li>
               <Collapse isOpen={collapseOpen}>
                 <ul className="sidebar-nav">
@@ -132,9 +137,12 @@ function Sidebar() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <a href="/brandmaster" className="nav-link">
+                    <Link href="brandmaster">
+                    <a className="nav-link">
                       <i className="far fa-clipboard-list"></i>Outreach Planning
                     </a>
+                    </Link>
+                    
                   </li>
                 </ul>
               </Collapse>
@@ -163,7 +171,8 @@ function Sidebar() {
               </Link>
 
             </li>
-            <li className="nav-item ">
+            <li className="nav-item">
+              <Link href="/settings">
               <a
                 href="/settings"
                 onClick={(e) => {
@@ -176,6 +185,7 @@ function Sidebar() {
               >
                 <i className="fas fa-tag"></i>Settings
               </a>
+              </Link>
             </li>
           </ul>
           <hr className="my-3" />
