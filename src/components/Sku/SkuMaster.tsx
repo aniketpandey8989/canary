@@ -25,10 +25,15 @@ export default function SkuMaster() {
 
   useEffect(() => {
     const loadposts = async () => {
-      const response = await axios.get(baseURL);
-      setPosts(response?.data?.Exceptions);
-      setTotal(response?.data?.Exceptions?.length);
+      axios.post(`https://8ygiw4c0a1.execute-api.us-west-1.amazonaws.com/sign_in`, { 'email': 'a@test.com', 'password': '123456' }).then((response) => {
+        console.log('response', response)
+        setPosts(response?.data?.Exceptions);
+        setTotal(response?.data?.Exceptions?.length);
+      }).catch(error => {
+        console.log('error', error)
+      });
     }
+
     loadposts();
   }, []);
 

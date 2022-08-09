@@ -14,14 +14,11 @@ import BarCharts from "../components/Graph/BarCharts";
 import MapChart from "../components/Maps/MapChart";
 import Link from 'next/link';
 import Maps from "./Maps";
-import Dashboard from "../components/DashBoard";
+import Login from './login'
 
 function IndexPage() {
-
   return (
-     <Dashboard/>
+     <Login/>
   );
 }
 export default IndexPage;
-
-

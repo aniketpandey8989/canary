@@ -1,10 +1,27 @@
-import { useState } from "react";
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 import { Card, Collapse } from "reactstrap";
+import { useDispatch, useSelector } from "react-redux";
+import Router from "next/router";
+
+interface AuthState {
+  auth: any
+}
+
 function Sidebar() {
   const [dropdownOpen, setdropdownOpen] = useState(false);
   const [collapseOpen, setCollapseOpen] = React.useState(false);
+
+  const { user: token } = useSelector(
+    (state: AuthState) => state.auth
+  );
+
+  useEffect(() => {
+    if (!token.token) {
+      Router.push("/login");
+    }
+  }, []);
+
   return (
     <nav
       id="sidenav-main"
@@ -16,11 +33,11 @@ function Sidebar() {
         </button>
         <span>
           <Link href="#">
-          <a className="pt-0 navbar-brand">
-            Canary
-          </a>
+            <a className="pt-0 navbar-brand">
+              Canary
+            </a>
           </Link>
-          
+
         </span>
         <ul className="align-items-center d-md-none nav">
           <li className="dropdown nav-item">
@@ -99,19 +116,19 @@ function Sidebar() {
             <>
               <li className="nav-item active">
                 <Link href="/dashboard">
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setCollapseOpen(!collapseOpen);
-                  }}
-                  role="button"
-                  id="collapseExample"
-                  className="nav-link"
-                >
-                  <i className="fas fa-tag"></i>Sales Manager
-                </a>
+                  <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setCollapseOpen(!collapseOpen);
+                    }}
+                    role="button"
+                    id="collapseExample"
+                    className="nav-link"
+                  >
+                    <i className="fas fa-tag"></i>Sales Manager
+                  </a>
                 </Link>
-                
+
               </li>
               <Collapse isOpen={collapseOpen}>
                 <ul className="sidebar-nav">
@@ -138,11 +155,11 @@ function Sidebar() {
                   </li>
                   <li className="nav-item">
                     <Link href="brandmaster">
-                    <a className="nav-link">
-                      <i className="far fa-clipboard-list"></i>Outreach Planning
-                    </a>
+                      <a className="nav-link">
+                        <i className="far fa-clipboard-list"></i>Outreach Planning
+                      </a>
                     </Link>
-                    
+
                   </li>
                 </ul>
               </Collapse>
@@ -173,18 +190,18 @@ function Sidebar() {
             </li>
             <li className="nav-item">
               <Link href="/settings">
-              <a
-                href="/settings"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setCollapseOpen(!collapseOpen);
-                }}
-                role="button"
-                id="collapseExample"
-                className="nav-link"
-              >
-                <i className="fas fa-tag"></i>Settings
-              </a>
+                <a
+                  href="/settings"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setCollapseOpen(!collapseOpen);
+                  }}
+                  role="button"
+                  id="collapseExample"
+                  className="nav-link"
+                >
+                  <i className="fas fa-tag"></i>Settings
+                </a>
               </Link>
             </li>
           </ul>
