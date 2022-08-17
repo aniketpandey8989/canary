@@ -21,7 +21,7 @@ export default function SkuMaster() {
   const [loadingClass, setLoadingClass] = useState("");
 
   const baseURL =
-    "https://jotqvldydj.execute-api.us-west-1.amazonaws.com/PRODUCT_RFID_EXCEPTIONS";
+    "http://13.57.191.90:3000/api/admin/product-rfid-exceptions";
 
   const handleBasicClick = (value: string) => {
     if (value === basicActive) {
@@ -37,14 +37,14 @@ export default function SkuMaster() {
         ...authUserHeader()
       },
     };
-    axios.get(baseURL + '?search=' + search + '&pageno=' + pageno + '&limit=' + limit, {...defaultOptions}).then((response) => {
+
+    axios.get(baseURL + '?search=' + search + '&pageno=' + pageno + '&limit=' + limit, { ...defaultOptions }).then((response) => {
       setPosts(response?.data?.Product);
       setTotal(response?.data?.totalLength);
       setLoadingClass("");
-      //console.log('response?.data?.Product', response?.data?.Product)
     }).catch(error => {
       console.log('error', error.response.status)
-      if(error.response.status == '403'){
+      if (error.response.status == '403') {
         logout(dispatch);
       }
     });

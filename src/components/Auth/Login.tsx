@@ -31,7 +31,7 @@ const Login = () => {
     const buttonloader = useSelector(
         (state: LoaderState) => state.buttonloader
     );
-
+    
     const [errorText, setErrorText] = useState("");
 
     const { user: token } = useSelector(
@@ -39,10 +39,10 @@ const Login = () => {
     );
 
     //const baseUrl = process.env.LOGIN_URL;
-    const baseUrl = "https://s3rt8hnkm2.execute-api.us-west-1.amazonaws.com";
-    const URI = "sign_in";
+    const baseUrl = "http://13.57.191.90:3000";
+    const URI = "api/admin/signin";
 
-    useEffect(() => {console.log('token',token)
+    useEffect(() => {
         if (token.token) {
             Router.push("/dashboard");
         }
