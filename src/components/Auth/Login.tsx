@@ -39,10 +39,10 @@ const Login = () => {
     );
 
     //const baseUrl = process.env.LOGIN_URL;
-    const baseUrl = "http://13.57.191.90:3000";
-    const URI = "api/admin/signin";
+    const baseUrl = "https://s3rt8hnkm2.execute-api.us-west-1.amazonaws.com";
+    const URI = "sign_in";
 
-    useEffect(() => {
+    useEffect(() => {console.log('token',token)
         if (token.token) {
             Router.push("/dashboard");
         }

@@ -21,7 +21,7 @@ export default function SkuMaster() {
   const [loadingClass, setLoadingClass] = useState("");
 
   const baseURL =
-    "http://13.57.191.90:3000/api/admin/product-rfid-exceptions";
+    "https://jotqvldydj.execute-api.us-west-1.amazonaws.com/PRODUCT_RFID_EXCEPTIONS";
 
   const handleBasicClick = (value: string) => {
     if (value === basicActive) {
