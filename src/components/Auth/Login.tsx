@@ -31,7 +31,7 @@ const Login = () => {
     const buttonloader = useSelector(
         (state: LoaderState) => state.buttonloader
     );
-    
+
     const [errorText, setErrorText] = useState("");
 
     const { user: token } = useSelector(
@@ -39,10 +39,13 @@ const Login = () => {
     );
 
     //const baseUrl = process.env.LOGIN_URL;
-    const baseUrl = "https://s3rt8hnkm2.execute-api.us-west-1.amazonaws.com";
-    const URI = "sign_in";
+    const baseUrl = "https://kg5l0w8x6i.execute-api.us-west-1.amazonaws.com";
+    const URI = "/api/admin/sign-in";
 
-    useEffect(() => {console.log('token',token)
+    
+
+    useEffect(() => {
+        console.log('token', token)
         if (token.token) {
             Router.push("/dashboard");
         }
@@ -66,7 +69,7 @@ const Login = () => {
                                 type: BUTTON_LOADER,
                             });
                             setErrorText('');
-
+                            //console.log(res.data); return false;
                             if (res.data.token) {
                                 localStorage.setItem("canary_user", JSON.stringify(res.data));
 
