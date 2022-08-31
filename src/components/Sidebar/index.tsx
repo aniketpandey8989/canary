@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { Card, Collapse } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Router, { useRouter } from 'next/router';
+import Image from 'next/image';
+
+import logo2 from "../../images/logo1.png";
 
 import {
   FaChartLine,
@@ -45,7 +48,12 @@ function Sidebar() {
         </button>
         <span>
           <Link href='#'>
-            <a className='pt-0 navbar-brand'>Canary</a>
+            <a className='pt-0 navbar-brand'><div className="text-center"><Image
+                    src={logo2}
+                    alt="logo"
+                    width="100px"
+                    height="90px"
+                  /></div></a>
           </Link>
         </span>
         <ul className='align-items-center d-md-none nav'>

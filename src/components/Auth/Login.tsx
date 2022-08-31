@@ -3,9 +3,12 @@ import { Formik } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from "react-redux";
+import Router from "next/router";
+import Image from "next/image";
+
 import ButtonLoader from '../buttonLoader'
 import { BUTTON_LOADER, LOGIN_SUCCESS } from '../../redux/actions';
-import Router from "next/router";
+import logo1 from "../../images/logo1.png";
 
 const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -38,14 +41,11 @@ const Login = () => {
         (state: AuthState) => state.auth
     );
 
-    //const baseUrl = process.env.LOGIN_URL;
-    const baseUrl = "https://kg5l0w8x6i.execute-api.us-west-1.amazonaws.com";
-    const URI = "/api/admin/sign-in";
-
-    
+    const baseUrl = process.env.API_PATH;
+    const URI = "sign-in";
+    console.log(baseUrl, 'baseUrl')
 
     useEffect(() => {
-        console.log('token', token)
         if (token.token) {
             Router.push("/dashboard");
         }
@@ -69,7 +69,6 @@ const Login = () => {
                                 type: BUTTON_LOADER,
                             });
                             setErrorText('');
-                            //console.log(res.data); return false;
                             if (res.data.token) {
                                 localStorage.setItem("canary_user", JSON.stringify(res.data));
 
@@ -79,8 +78,6 @@ const Login = () => {
                                 });
 
                                 window.location.href = "/dashboard";
-
-                                //Router.push('dashboard');
                             } else {
                                 setErrorText('Request failed, Try again later!');
                             }
@@ -112,6 +109,12 @@ const Login = () => {
                                             {errorText}
                                         </div>
                                     )}
+                                    <div className="text-center"><Image
+                    src={logo1}
+                    alt="logo"
+                    width="100px"
+                    height="90px"
+                  /></div>
 
                                     <h3 className="Auth-form-title">Sign In </h3>
                                     <div className="form-group mt-3">
