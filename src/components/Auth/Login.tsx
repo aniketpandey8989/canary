@@ -9,6 +9,7 @@ import Image from "next/image";
 import ButtonLoader from '../buttonLoader'
 import { BUTTON_LOADER, LOGIN_SUCCESS } from '../../redux/actions';
 import logo1 from "../../images/logo1.png";
+import { storeExpiry } from '../../helpers/localstorage-helper';
 
 const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -43,13 +44,12 @@ const Login = () => {
 
     const baseUrl = process.env.API_PATH;
     const URI = "sign-in";
-    console.log(baseUrl, 'baseUrl')
 
     useEffect(() => {
         if (token.token) {
             Router.push("/dashboard");
         }
-    }, [token]);
+    }, []);
 
     return (
         <div>
@@ -63,7 +63,7 @@ const Login = () => {
                     dispatch({
                         type: BUTTON_LOADER,
                     });
-                    axios.post(`${baseUrl}/${URI}`, values)
+                    axios.post(`${baseUrl}${URI}`, values)
                         .then((res) => {
                             dispatch({
                                 type: BUTTON_LOADER,
@@ -71,6 +71,7 @@ const Login = () => {
                             setErrorText('');
                             if (res.data.token) {
                                 localStorage.setItem("canary_user", JSON.stringify(res.data));
+                                storeExpiry("canary_user_auth_token", res.data.token, ((Number(res.data.expiryDuration) * 60000)/4), true);
 
                                 dispatch({
                                     type: LOGIN_SUCCESS,
@@ -110,11 +111,11 @@ const Login = () => {
                                         </div>
                                     )}
                                     <div className="text-center"><Image
-                    src={logo1}
-                    alt="logo"
-                    width="100px"
-                    height="90px"
-                  /></div>
+                                        src={logo1}
+                                        alt="logo"
+                                        width="100px"
+                                        height="90px"
+                                    /></div>
 
                                     <h3 className="Auth-form-title">Sign In </h3>
                                     <div className="form-group mt-3">

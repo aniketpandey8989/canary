@@ -3,7 +3,6 @@ import Sidebar from '../Sidebar'
 import SkuMaster from './SkuMaster'
 
 const Sku = () => {
-
     return (
         <div>
             <div>

@@ -5,6 +5,8 @@ export const logout = (
   redirect = true
 ) => {
   localStorage.removeItem("canary_user");
+  localStorage.removeItem("canary_user_auth_token");
+  localStorage.removeItem("canary_user_auth_token.e");
   dispatch({
     type: LOGOUT,
   });

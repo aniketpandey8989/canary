@@ -20,8 +20,7 @@ export default function SkuMaster() {
   const [postsPerPage, setPostsPerPage] = useState(10);
   const [loadingClass, setLoadingClass] = useState('');
 
-  const baseURL =
-    'https://kg5l0w8x6i.execute-api.us-west-1.amazonaws.com/api/admin/product-rfid-exceptions';
+  const baseURL = process.env.API_PATH+'product-rfid-exceptions';
 
   const handleBasicClick = (value: string) => {
     if (value === basicActive) {
@@ -46,11 +45,10 @@ export default function SkuMaster() {
         setPosts(response?.data?.Product);
         setTotal(response?.data?.totalLength);
         setLoadingClass('');
-        //console.log('response?.data?.Product', response?.data?.Product)
       })
       .catch((error) => {
         console.log('error', error.response.status);
-        if (error.response.status == '403') {
+        if (error.response.status == '403' || error.response.status == '401') {
           logout(dispatch);
         }
       });
@@ -86,6 +84,7 @@ export default function SkuMaster() {
   };
 
   return (
+    <>
     <div className='container'>
       <div
         className='border-0 card-header'
@@ -503,5 +502,7 @@ export default function SkuMaster() {
         </div>
       </div>
     </div>
+    </>
+    
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 import Header from '../Header';
 import Sidebar from '../Sidebar';
@@ -8,15 +9,13 @@ import Sidetable from '../Sidetable';
 import BarCharts from '../Graph/BarCharts';
 import mapsimage from '../../images/maps.jpg';
 
-import Image from 'next/image';
-
 const Dashboard = () => {
   const [startDate, setStartDate] = useState(
     moment().subtract(1, 'months').format('YYYY-MM-DD')
   );
   const [endDate, setEndDate] = useState(moment().format('YYYY-MM-DD'));
   return (
-    <div>
+    <>
       <Sidebar />
       <div className='main-content'>
         <Header />
@@ -59,7 +58,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default Dashboard;

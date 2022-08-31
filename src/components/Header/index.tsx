@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { LOGOUT } from '../../redux/actions';
+import { logout } from '../../services/UserServices';
 import { FaChartBar, FaChartPie, FaTrademark, FaUser } from 'react-icons/fa';
 import { authUserHeader } from '../../helpers/auth-header';
 
@@ -20,8 +20,7 @@ function Header() {
   const dispatch = useDispatch();
   const [dropdownOpen, setdropdownOpen] = useState(false);
   const [Data, setData] = useState<SalesType>();
-  const baseURL =
-    'https://kg5l0w8x6i.execute-api.us-west-1.amazonaws.com/api/admin/mtd-qtd-ytd';
+  const baseURL = process.env.API_PATH+'mtd-qtd-ytd';
   
   React.useEffect(() => {
     const defaultOptions = {
@@ -29,17 +28,20 @@ function Header() {
         ...authUserHeader(),
       },
     };
-    axios.get(baseURL, { ...defaultOptions }).then((response) => {
+    axios.get(baseURL, { ...defaultOptions })
+    .then((response) => {
       setData(response.data);
+    })
+    .catch((error) => {
+      console.log('error', error.response.status);
+      if (error.response.status == '403' || error.response.status == '401') {
+        logout(dispatch);
+      }
     });
   }, []);
 
-  const logout = () => {
-    localStorage.removeItem('canary_user');
-    dispatch({
-      type: LOGOUT,
-    });
-    location.href = '/login';
+  const doLogout = () => {
+    logout(dispatch);
   };
 
   return (
@@ -105,7 +107,7 @@ function Header() {
                   <a href=''>Earnings</a>
                 </li>
                 <li>
-                  <a onClick={logout}>Logout</a>
+                  <a onClick={doLogout}>Logout</a>
                 </li>
               </ul>
             </div>
